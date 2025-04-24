@@ -22,10 +22,10 @@ Una vez hayámos asignado las IP la ejecución de los comandos `ifconfig` en Lin
 
 | Equipo             | Resultado                                                      |
 |:--------------------:|:----------------------------------------------------------------:|
-| Servidor Linux     | ![IP Linux Server](https://raw.githubusercontent.com/SoyBena/ssf/refs/heads/main/U08AC01%20/img/PARTE%201/ip-linux-server.png?token=GHSAT0AAAAAADCYC6O3K7IWUOKZUUF3XSTE2AJ7VYA) |
-| Cliente Linux| ![IP Linux cliente](https://raw.githubusercontent.com/SoyBena/ssf/refs/heads/main/U08AC01%20/img/PARTE%201/ip-linux-cliente.png?token=GHSAT0AAAAAADCYC6O2FY2ZC3PARU4SLFTU2AJ7X6Q)
-| Servidor Windows | ![IP Windows Server](https://raw.githubusercontent.com/SoyBena/ssf/refs/heads/main/U08AC01%20/img/PARTE%201/ip-windows-server.png?token=GHSAT0AAAAAADCYC6O3GF72OJYVMNMAJJWY2AJ76ZA) |
-| Cliente Windows | ![IP Windows Cliente](https://raw.githubusercontent.com/SoyBena/ssf/refs/heads/main/U08AC01%20/img/PARTE%201/ip-windows-cliente.png?token=GHSAT0AAAAAADCYC6O2XV4K3C54GOA5Y7F42AKAABQ) |
+| Servidor Linux     | ![IP Linux Server](https://github.com/SoyBena/ssf/blob/main/U08AC01%20/img/PARTE%201/ip-linux-server.png?raw=true) |
+| Cliente Linux| ![IP Linux cliente](https://github.com/SoyBena/ssf/blob/main/U08AC01%20/img/PARTE%201/ip-linux-cliente.png?raw=true)
+| Servidor Windows | ![IP Windows Server](https://github.com/SoyBena/ssf/blob/main/U08AC01%20/img/PARTE%201/ip-windows-server.png?raw=true) |
+| Cliente Windows | ![IP Windows Cliente](https://github.com/SoyBena/ssf/blob/main/U08AC01%20/img/PARTE%201/ip-windows-cliente.png?raw=true) |
 
 ## 🔧 Paso 1: Antes de empezar
 Antes de poder conectarnos a un equipo remoto tenemos que asegurarnos de que el equipo de destino está **preparado** para recibir conexiones remotas.
@@ -46,7 +46,7 @@ Antes de poder conectarnos a un equipo remoto tenemos que asegurarnos de que el 
     sudo systemctl enable --now ssh
     ```
     Si todo ha salido de forma correcta, al volver a comprobar el estado del servicio deberíamos de obtener la siguiente salida:
-    ![Estado SSH](https://raw.githubusercontent.com/SoyBena/ssf/refs/heads/main/U08AC01%20/img/PARTE%201/habilitado-ssh-server.png?token=GHSAT0AAAAAADCYC6O25UDHJRHHETXTM2PO2AKAWMA)
+    ![Estado SSH](https://github.com/SoyBena/ssf/blob/main/U08AC01%20/img/PARTE%201/habilitado-ssh-server.png?raw=true)
     
 - ### 🪟 Windows
     Aunque también es posible concectarse entre equipos Windows con SSH, el sistema operativo cuenta con su propio protocolo de conexión remota: **Remote Desktop Protocol (RDP)**. Este protocolo nos permite **conectarnos remotamente** desde un equipo Windows (como puede ser el equipo de tu casa) a otros dispositivos Windows (como puede ser el equipo de tu oficina, o un equipo con Windows Server)
