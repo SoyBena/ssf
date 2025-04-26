@@ -199,34 +199,34 @@ Como podemos ver a continuación, en la priemra ejecución del comando `ls` vemo
     En este punto podemos decidir aceptarlo o rechazarlo:
     - Si lo **rechazamos** la ventana emergente se cerrará y no se efectuará la conexión.
     - Si lo **aceptamos** la ventana emergente se cerrará y continuaremos adelante con la conexión. Además, podemos marcar la casilla *No volver a preguntarme sobre conexiones a este equipo* para guardar la elección y no necesitar aceptarlo cada vez que nos conectemos.
-    
-    > [!WARNING]
-    > ¡Ojo! Al conectar mediante este método es probable que, si hay un usuario con la sesión iniciada en el equipo remoto este usuario deba aceptar la conexión. Además, si el usuario con el que estamos tratando conectar tiene la sesión iniciada, su sesión se cerrará al nosotros conectarnos. 
-    > 
-    > Además, si alguien en el otro extremo iniciase sesión con ese usuario **mientras** estemos conectados, nos echará de la sesión.
 
-    Si todo ha salido bien nos habremos conectado al equipo:
+> [!WARNING]
+> ¡Ojo! Al conectar mediante este método es probable que, si hay un usuario con la sesión iniciada en el equipo remoto este usuario deba aceptar la conexión. Además, si el usuario con el que estamos tratando conectar tiene la sesión iniciada, su sesión se cerrará al nosotros conectarnos. 
+> 
+> Además, si alguien en el otro extremo iniciase sesión con ese usuario **mientras** estemos conectados, nos echará de la sesión.
 
-    ![Conexion RDP 1](https://github.com/SoyBena/ssf/blob/main/U08AC01%20/img/PARTE%202/conexion.png?raw=true)
+Si todo ha salido bien nos habremos conectado al equipo:
 
-    ![Conexion RDP 2](https://github.com/SoyBena/ssf/blob/main/U08AC01%20/img/PARTE%202/escritorio-antes.png?raw=true)
+![Conexion RDP 1](https://github.com/SoyBena/ssf/blob/main/U08AC01%20/img/PARTE%202/conexion.png?raw=true)
+
+![Conexion RDP 2](https://github.com/SoyBena/ssf/blob/main/U08AC01%20/img/PARTE%202/escritorio-antes.png?raw=true)
 
 
-    Una vez aquí podemos trabajar en el equipo como si estuvieramos físicamente en él, además, desde la misma interfaz gráfica. Para comprobarlo, vamos a crear un fichero en le escritorio.
+Una vez aquí podemos trabajar en el equipo como si estuvieramos físicamente en él, además, desde la misma interfaz gráfica. Para comprobarlo, vamos a crear un fichero en le escritorio.
 
-    ![Creamos un fichero en el escritorio](https://github.com/SoyBena/ssf/blob/main/U08AC01%20/img/PARTE%202/escritorio-fichero-creado-remoto.png?raw=true)
+![Creamos un fichero en el escritorio](https://github.com/SoyBena/ssf/blob/main/U08AC01%20/img/PARTE%202/escritorio-fichero-creado-remoto.png?raw=true)
 
-    En principio parece que se ha creado correctamente. Aun así, vamos a acceder directamente al equipo remoto (esta vez, físicamente) para comprobar si efectivamente el fichero se ha creado:
+En principio parece que se ha creado correctamente. Aun así, vamos a acceder directamente al equipo remoto (esta vez, físicamente) para comprobar si efectivamente el fichero se ha creado:
 
-    ![Prueba de persistencia](https://github.com/SoyBena/ssf/blob/main/U08AC01%20/img/PARTE%202/escritorio-despues.png?raw=true)
+![Prueba de persistencia](https://github.com/SoyBena/ssf/blob/main/U08AC01%20/img/PARTE%202/escritorio-despues.png?raw=true)
 
-    ¡Efectivamente! Se ha creado nuestro fichero en la máquina remota. ¿Qué maravilla, no? Llegados a este puntdo ya sabemos conectarnos a través de este protocolo a otro equipo, pero... ¿No es un poco engorroso tener que estar introduciendo todo el rato la IP y el usuario?
+¡Efectivamente! Se ha creado nuestro fichero en la máquina remota. ¿Qué maravilla, no? Llegados a este puntdo ya sabemos conectarnos a través de este protocolo a otro equipo, pero... ¿No es un poco engorroso tener que estar introduciendo todo el rato la IP y el usuario?
 
-    Lo es, y por eso Windows nos permite crear un archivo con extensión `.rdp`, que almacena los datos de la conexión que queramos para agilizar este proceso. Basta con darle a guardar en la pantalla principal del RDP, obteniendo como resultado un fichero como este:
-    ![Fichero RDP](https://github.com/SoyBena/ssf/blob/main/U08AC01%20/img/PARTE%202/fichero-conexion-rdp.png?raw=true)
+Lo es, y por eso Windows nos permite crear un archivo con extensión `.rdp`, que almacena los datos de la conexión que queramos para agilizar este proceso. Basta con darle a guardar en la pantalla principal del RDP, obteniendo como resultado un fichero como este:
+![Fichero RDP](https://github.com/SoyBena/ssf/blob/main/U08AC01%20/img/PARTE%202/fichero-conexion-rdp.png?raw=true)
 
-    > [!TIP]
-    > Además de guardar las credenciales de inicio de sesión, este protocolo nos permite cambiar distintas configuraciones en relación a la conexión que tienen que ver con los recursos del sistema. Podemos configurar una calidad de imagen reducida (para reducir el ancho de banda neesario), cambiar configuraciones del audio, etc.
+> [!TIP]
+> Además de guardar las credenciales de inicio de sesión, este protocolo nos permite cambiar distintas configuraciones en relación a la conexión que tienen que ver con los recursos del sistema. Podemos configurar una calidad de imagen reducida (para reducir el ancho de banda neesario), cambiar configuraciones del audio, etc.
 
 # 💭 Reflexión final
 Tras realizar esta práctica hemos aprendido a manejarnos con conexiones remotas. Se dice rápido, pero lo cierto es que sin conocimientos ni experiencia previa puede ser algo bastante complicado de entender y de llevar a cabo.
