@@ -99,7 +99,9 @@ Como hemos dicho antes, `SSH` es un **protocolo** que nos permite conectarnos de
 En este supuesto vamos a hacer dos conexiones:
 - ### Entre dos equipos Linux        
     Una vez tenemos todo listo, ingresamos en el terminal desde nuestro equipo de cliente. Para conectarnos hacemos uso del comando `ssh`, que sigue la sintaxis `ssh usuario@ip`.
-    ![Conexion SSH](https://github.com/SoyBena/ssf/blob/main/U08AC01%20/img/PARTE%201/conexion-cliente-linux-server-linux.png?raw=true)
+
+  ![Conexion SSH](https://github.com/SoyBena/ssf/blob/main/U08AC01%20/img/PARTE%201/conexion-cliente-linux-server-linux.png?raw=true)
+  
     Vemos muchas cosas en esta imagen, vamos a despiezarlo:
     | Comando                          | Explicación                              |
     |----------------------------------|------------------------------------------|
