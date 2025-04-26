@@ -173,13 +173,13 @@ Como podemos ver a continuación, en la priemra ejecución del comando `ls` vemo
 >
 > Sin embargo, hay algunos que pueden ser muy comunes, y además, fáciles de resolver, pero que la inexperiencia puede hacer que nos resulten muy difíciles de ubicar.
 ---
-> [!WARNING]Ruta
+> [!WARNING]
 > La ruta de **destino** tiene que existir previo a la ejecución del comando. Si no existe, podemos encontrarnos con un error. (`No such file or directory`)
 
 > [!TIP]
 > Basta con crear la ruta en el destino haciendo uso de `mkdir` (en nuestro equipo o remotamente como hemos visto antes.)
 ---
-> [!WARNING]Directorio
+> [!WARNING]
 > Es muy común que, en lugar de enviar un fichero individual queramos hacer un envio de un directorio y de sus contenidos, pero al intentarlo podemos experimentar algún error u obtener un resultado diferente al esperado.
 
 > [!TIP]
