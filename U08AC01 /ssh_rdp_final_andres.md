@@ -46,12 +46,12 @@ Una vez hayámos asignado las IP la ejecución de los comandos `ifconfig` en Lin
 
 ## 🔧 Antes de empezar
 Antes de poder conectarnos a un equipo remoto tenemos que asegurarnos de que el equipo de destino está **preparado** para recibir conexiones remotas.
-- ### 🟠 Linux
-    Para establecer conexiones remotas hacia un dispositivo Linux utilizaremos el protocolo `SSH`, que nos permite acceder remotamente a otro equipo y de forma remota. Primero deberemos de comprobar si tenemos el servicio en ejecución:
+### 🟠 Linux
+Para establecer conexiones remotas hacia un dispositivo Linux utilizaremos el protocolo `SSH`, que nos permite acceder remotamente a otro equipo y de forma remota. Primero deberemos de comprobar si tenemos el servicio en ejecución:
 
-    ```bash
-    sudo systemctl status ssh
-    ```
+```bash
+sudo systemctl status ssh
+```
     
 > [!WARNING]
 > Bajo circunstancias normales obtendremos un mensaje por consola similar al siguiente: `Unit ssh.service could not be found.` indicando que no se ha encontrado el servicio. 
@@ -59,17 +59,17 @@ Antes de poder conectarnos a un equipo remoto tenemos que asegurarnos de que el 
 > [!TIP]
 > ¡Pero no pasa nada! Todo tiene solución. Primero nos cercioraremos de que contamos con el paquete `openssh-server` . Para ello, primero actualizaremos la lista de repositorios de nuestro gestor de paquetes —`apt` en este caso— y después lo descargaremos.
 
-    ```bash
-    sudo apt update &&
-    sudo apt install openssh-server
-    ```
-    Una vez hayamos descargado el paquete podremos **iniciar el servicio** de SSH que nos permitirá recibir conexiones remotas desde otros equipos:
-    ```bash
-    sudo systemctl enable --now ssh
-    ```
-    Si todo ha salido de forma correcta, al volver a comprobar el estado del servicio deberíamos de obtener la siguiente salida:
+```bash
+sudo apt update &&
+sudo apt install openssh-server
+```
+Una vez hayamos descargado el paquete podremos **iniciar el servicio** de SSH que nos permitirá recibir conexiones remotas desde otros equipos:
+```bash
+sudo systemctl enable --now ssh
+```
+Si todo ha salido de forma correcta, al volver a comprobar el estado del servicio deberíamos de obtener la siguiente salida:
 
-    ![Estado SSH](https://github.com/SoyBena/ssf/blob/main/U08AC01%20/img/PARTE%201/habilitado-ssh-server.png?raw=true)
+![Estado SSH](https://github.com/SoyBena/ssf/blob/main/U08AC01%20/img/PARTE%201/habilitado-ssh-server.png?raw=true)
     
 - ### 🪟 Windows
     Aunque también es posible concectarse entre equipos Windows con SSH, el sistema operativo cuenta con su propio protocolo de conexión remota: **Remote Desktop Protocol (RDP)**. Este protocolo nos permite **conectarnos remotamente** desde un equipo Windows (como puede ser el equipo de tu casa) a otros dispositivos Windows (como puede ser el equipo de tu oficina, o un equipo con Windows Server)
