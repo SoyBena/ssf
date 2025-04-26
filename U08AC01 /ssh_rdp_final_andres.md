@@ -71,21 +71,21 @@ Si todo ha salido de forma correcta, al volver a comprobar el estado del servici
 
 ![Estado SSH](https://github.com/SoyBena/ssf/blob/main/U08AC01%20/img/PARTE%201/habilitado-ssh-server.png?raw=true)
     
-- ### 🪟 Windows
-    Aunque también es posible concectarse entre equipos Windows con SSH, el sistema operativo cuenta con su propio protocolo de conexión remota: **Remote Desktop Protocol (RDP)**. Este protocolo nos permite **conectarnos remotamente** desde un equipo Windows (como puede ser el equipo de tu casa) a otros dispositivos Windows (como puede ser el equipo de tu oficina, o un equipo con Windows Server)
+### 🪟 Windows
+Aunque también es posible concectarse entre equipos Windows con SSH, el sistema operativo cuenta con su propio protocolo de conexión remota: **Remote Desktop Protocol (RDP)**. Este protocolo nos permite **conectarnos remotamente** desde un equipo Windows (como puede ser el equipo de tu casa) a otros dispositivos Windows (como puede ser el equipo de tu oficina, o un equipo con Windows Server)
 
-    Para habilitar el RDP tenemos que ir a `Configuración > Sistema > Escritorio Remoto` y activarlo
-    ![Activado de RDP](https://github.com/SoyBena/ssf/blob/main/U08AC01%20/img/PARTE%202/habilitar-escritorio-remoto.png?raw=true)
-    
-    > [!WARNING]
-    > ¡Pero eso no es todo! En Windows, además de habilitar la conexión de escritorio remoto hay que especificar **qué usuarios** van a ser accesibles remotamente. Si intentamos acceder con un usuario que **no está habilitado** para conexión por RDP experimentarás el siguiente error:
-    
-    ![Error RDP](https://github.com/SoyBena/ssf/blob/main/U08AC01%20/img/PARTE%202/error-conexion-usuario-no-identificado.png?raw=true)
-    
-    > [!TIP]
-    > En la misma pestaña de configuración del paso anterior, abajo del todo podemos encontrar la para seleccionar los usuarios **accesibles** a través del Escritorio Remoto.
+Para habilitar el RDP tenemos que ir a `Configuración > Sistema > Escritorio Remoto` y activarlo
+![Activado de RDP](https://github.com/SoyBena/ssf/blob/main/U08AC01%20/img/PARTE%202/habilitar-escritorio-remoto.png?raw=true)
 
-    ![Usuarios RDP](https://github.com/SoyBena/ssf/blob/main/U08AC01%20/img/PARTE%202/configuracion-usuarios-rdp.png?raw=true)
+> [!WARNING]
+> ¡Pero eso no es todo! En Windows, además de habilitar la conexión de escritorio remoto hay que especificar **qué usuarios** van a ser accesibles remotamente. Si intentamos acceder con un usuario que **no está habilitado** para conexión por RDP experimentarás el siguiente error:
+
+![Error RDP](https://github.com/SoyBena/ssf/blob/main/U08AC01%20/img/PARTE%202/error-conexion-usuario-no-identificado.png?raw=true)
+
+> [!TIP]
+> En la misma pestaña de configuración del paso anterior, abajo del todo podemos encontrar la para seleccionar los usuarios **accesibles** a través del Escritorio Remoto.
+
+![Usuarios RDP](https://github.com/SoyBena/ssf/blob/main/U08AC01%20/img/PARTE%202/configuracion-usuarios-rdp.png?raw=true)
 
 
 ## 🔌 ¡Nos conectamos!
