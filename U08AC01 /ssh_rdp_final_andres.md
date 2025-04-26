@@ -92,7 +92,7 @@ Para habilitar el RDP tenemos que ir a `Configuración > Sistema > Escritorio Re
 Si has llegado a este punto estás listo para acceder de forma remota a otros equipos, pero... ¿Cómo lo hago?
 
 > [!IMPORTANT]
-> Para poder conectarse de forma correcta en los apartados de este putno es importante haber seguido los pasos anteriormente descritos en el apartado "Antes de empezar
+> Para poder conectarse de forma correcta en los apartados de este punto es importante haber seguido los pasos anteriormente descritos en el apartado "Antes de empezar
 
 ## 🔐 SSH 
 Como hemos dicho antes, `SSH` es un **protocolo** que nos permite conectarnos de forma remota y segura a otros equipos. Lo interesante de esto es que **no está vinculado a un sistema operativo**, por lo que podemos conectarnos desde un dispositivo Windows a un Linux y viceversa, así como entre dos dispositios con el mismo sistema operativo.
