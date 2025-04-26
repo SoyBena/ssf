@@ -109,79 +109,79 @@ Si has llegado a este punto estás listo para acceder de forma remota a otros eq
         |`$`| Promt. Una vez vemos esto hemos ingresado correctamente al usuario.|
         | `whoami` | Comprobamos con qué usuario estamos para verificar que nos hemos conectado satisfactoriamente |
 
-        > [!WARNING]  
-        >Pero... Como siempre, pueden haber problemas: en relación a la IP o al usuario (porque hayamos puesto mal la ip, porque el equipo de destino no esté preparado para recibir conexiones, porque el usuario introducido no exista...) Aquí vemos algunos ejemplos:
+> [!WARNING]  
+>Pero... Como siempre, pueden haber problemas: en relación a la IP o al usuario (porque hayamos puesto mal la ip, porque el equipo de destino no esté preparado para recibir conexiones, porque el usuario introducido no exista...) Aquí vemos algunos ejemplos:
 
-        ![Simulacion de errores](https://github.com/SoyBena/ssf/blob/main/U08AC01%20/img/PARTE%201/simulacion-errores.png?raw=true)
-        | Comando                          | Explicación       |
-        |----------------------------------|-------------------|
-        | `ssh noexiste@192.168.221.52` | Al tratar de conectar con un usuario que no existe ocurre algo curioso: no nos dice que el usuario no existe, sino que nos dice que no tenemos permiso. Esto es una medida de seguridad. |
-        | `ssh noexiste@192.168.225.52` | En este caso tan concreto hemos modificado la IP para intentar acceder a una ip fuera de la subred. Al intentar buscarla y no encontrarla... Se queda *"pescando"* hasta que cortamos la ejecución. |
-    - ### Desde Windows hasta Linux
-        Nos podemos concectar a través del PowerShell de Windows y no habría mayor problema, pero en este caso vamos a hacer uso de [PuTTY](https://www.putty.org/), un software que entre otras cosas nos permite conectarnos a través del protocolo `SSH`.
-        Al abrir el programa encontraremos (entre otros) un campo para introducir la ip del servidor al que nos queremos conectar. Tras eso, le damos a `Open`.
-        
-        ![Fingerprint PuTTY](https://github.com/SoyBena/ssf/blob/main/U08AC01%20/img/PARTE%201/conexion-putty-fingerprint.png?raw=true)
-        
-        Tras hacerlo, volvemos a ver el famoso *Fingerprint.* Le damos a Aceptar para continuar con nuestra conexión:
-        
-        ![Terminal de PuTTY](https://github.com/SoyBena/ssf/blob/main/U08AC01%20/img/PARTE%201/conexion-putty-server-linux.png?raw=true)
-        | Prompts                          | Explicación                                                  |
-        |----------------------------------|-------------------|
-        | `login as:` | Campo para introducir el usuario con el que nos queremos loggear |
-        |`nebula.sys@192.168.221.52's passwords`| Campo para introducir la contraseña|
-        Y tras hacerlo, estamos dentro.
-    - ### SCP 🗂️
-        Conectarnos de forma remota está bien, pero... ¿Cómo paso los archivos de mi proyecto al servidor? El SCP (Secure Copy Protocol) viene para solucionarlos la vida.
+![Simulacion de errores](https://github.com/SoyBena/ssf/blob/main/U08AC01%20/img/PARTE%201/simulacion-errores.png?raw=true)
+| Comando                          | Explicación       |
+|----------------------------------|-------------------|
+| `ssh noexiste@192.168.221.52` | Al tratar de conectar con un usuario que no existe ocurre algo curioso: no nos dice que el usuario no existe, sino que nos dice que no tenemos permiso. Esto es una medida de seguridad. |
+| `ssh noexiste@192.168.225.52` | En este caso tan concreto hemos modificado la IP para intentar acceder a una ip fuera de la subred. Al intentar buscarla y no encontrarla... Se queda *"pescando"* hasta que cortamos la ejecución. |
+- ### Desde Windows hasta Linux
+Nos podemos concectar a través del PowerShell de Windows y no habría mayor problema, pero en este caso vamos a hacer uso de [PuTTY](https://www.putty.org/), un software que entre otras cosas nos permite conectarnos a través del protocolo `SSH`.
+Al abrir el programa encontraremos (entre otros) un campo para introducir la ip del servidor al que nos queremos conectar. Tras eso, le damos a `Open`.
 
-        Este protocolo nos permite transferir ficheros entre distintos equipos, pero... ¿Cómo se conectan ambos equipos? ¿Qué crees que puede ser? ¿Se te viene algo a la cabeza? ¿No? Este protocolo emplea de forma interna el protocolo `SSH` para establecer la conexión entre los equipos. ¿Qué cosas, no?
+![Fingerprint PuTTY](https://github.com/SoyBena/ssf/blob/main/U08AC01%20/img/PARTE%201/conexion-putty-fingerprint.png?raw=true)
 
-        > [!WARNING]
-        > ¡Cuidado! Hemos dicho que usa `SSH` internamente, por lo que los requisitos de uso son los mismos. Intentar usar este protocolo para enviar ficheros entre dos equipos puede darnos problemas si no se ha **preparado el equipo** para recibir conexiones a través de `SSH` (tal y como hicimos al principio)
+Tras hacerlo, volvemos a ver el famoso *Fingerprint.* Le damos a Aceptar para continuar con nuestra conexión:
 
-        Tras asegurar que el equipo remoto está preparado para recibir conexiones `SSH` vamos a comenzar nuestra transmisión. El modo de empleo del comando `scp` es:
-        
-        
-        Para **descargar** un fichero del servidor:
-        
-        ```bash
-        scp <usuario@ip:ruta_remota> <ruta_local>
-        ```
-        
-        En este caso, descargamos el fichero desde la ruta remota `/home/orbit.admin/FicheroHaciaCliente.txt` en el directorio actual `./`
+![Terminal de PuTTY](https://github.com/SoyBena/ssf/blob/main/U08AC01%20/img/PARTE%201/conexion-putty-server-linux.png?raw=true)
+| Prompts                          | Explicación                                                  |
+|----------------------------------|-------------------|
+| `login as:` | Campo para introducir el usuario con el que nos queremos loggear |
+|`nebula.sys@192.168.221.52's passwords`| Campo para introducir la contraseña|
+Y tras hacerlo, estamos dentro.
+- ### SCP 🗂️
+Conectarnos de forma remota está bien, pero... ¿Cómo paso los archivos de mi proyecto al servidor? El SCP (Secure Copy Protocol) viene para solucionarlos la vida.
 
-        ![scp-servidor-cliente](https://github.com/SoyBena/ssf/blob/main/U08AC01%20/img/PARTE%201/descarga-de-servidor-desde-cliente.png?raw=true)
+Este protocolo nos permite transferir ficheros entre distintos equipos, pero... ¿Cómo se conectan ambos equipos? ¿Qué crees que puede ser? ¿Se te viene algo a la cabeza? ¿No? Este protocolo emplea de forma interna el protocolo `SSH` para establecer la conexión entre los equipos. ¿Qué cosas, no?
+
+> [!WARNING]
+> ¡Cuidado! Hemos dicho que usa `SSH` internamente, por lo que los requisitos de uso son los mismos. Intentar usar este protocolo para enviar ficheros entre dos equipos puede darnos problemas si no se ha **preparado el equipo** para recibir conexiones a través de `SSH` (tal y como hicimos al principio)
+
+Tras asegurar que el equipo remoto está preparado para recibir conexiones `SSH` vamos a comenzar nuestra transmisión. El modo de empleo del comando `scp` es:
 
 
+Para **descargar** un fichero del servidor:
 
-        Y, para **subir** un fichero al servidor.
-        ```bash
-        scp <ruta_local> <usuario@ip:ruta_remota>
-        ``` 
-        ![scp-cliente-servidor](https://github.com/SoyBena/ssf/blob/main/U08AC01%20/img/PARTE%201/envio-cliente-servidor.png?raw=true)
+```bash
+scp <usuario@ip:ruta_remota> <ruta_local>
+```
+
+En este caso, descargamos el fichero desde la ruta remota `/home/orbit.admin/FicheroHaciaCliente.txt` en el directorio actual `./`
+
+![scp-servidor-cliente](https://github.com/SoyBena/ssf/blob/main/U08AC01%20/img/PARTE%201/descarga-de-servidor-desde-cliente.png?raw=true)
 
 
-       Como podemos ver a continuación, en la priemra ejecución del comando `ls` vemos que no hay ficheros. Sin embargo, al volverlo a lanzar vemos que se ha completado la transferencia satisfactoriamente:
 
-       ![resultado-scp-cliente-servodor](https://github.com/SoyBena/ssf/blob/main/U08AC01%20/img/PARTE%201/resultado-envio-cliente-servidor.png?raw=true)
+Y, para **subir** un fichero al servidor.
+```bash
+scp <ruta_local> <usuario@ip:ruta_remota>
+``` 
+![scp-cliente-servidor](https://github.com/SoyBena/ssf/blob/main/U08AC01%20/img/PARTE%201/envio-cliente-servidor.png?raw=true)
 
-       > [!WARNING]
-       > Además de los errores que ya nos podemos esperar al usar `SSH` hay ciertos errores que podemos esperar. Algunos son algo complejos, como aquellos casos donde el usuario remoto no tenga permisos en la ruta a la que se quiera acceder.
-       >
-       > Sin embargo, hay algunos que pueden ser muy comunes, y además, fáciles de resolver, pero que la inexperiencia puede hacer que nos resulten muy difíciles de ubicar.
-        ---
-       > [!WARNING]Ruta
-       > La ruta de **destino** tiene que existir previo a la ejecución del comando. Si no existe, podemos encontrarnos con un error. (`No such file or directory`)
-       
-       > [!TIP]
-       > Basta con crear la ruta en el destino haciendo uso de `mkdir` (en nuestro equipo o remotamente como hemos visto antes.)
-        ---
-       > [!WARNING]Directorio
-       > Es muy común que, en lugar de enviar un fichero individual queramos hacer un envio de un directorio y de sus contenidos, pero al intentarlo podemos experimentar algún error u obtener un resultado diferente al esperado.
 
-       > [!TIP]
-       > Esto ocurre porque (como es común en Linux) debemos de especificar que queremos enviar el directorio **y sus contenidos**, agregando el parámetro `-r` (de recursivo) al comando.
-       ---
+Como podemos ver a continuación, en la priemra ejecución del comando `ls` vemos que no hay ficheros. Sin embargo, al volverlo a lanzar vemos que se ha completado la transferencia satisfactoriamente:
+
+![resultado-scp-cliente-servodor](https://github.com/SoyBena/ssf/blob/main/U08AC01%20/img/PARTE%201/resultado-envio-cliente-servidor.png?raw=true)
+
+> [!WARNING]
+> Además de los errores que ya nos podemos esperar al usar `SSH` hay ciertos errores que podemos esperar. Algunos son algo complejos, como aquellos casos donde el usuario remoto no tenga permisos en la ruta a la que se quiera acceder.
+>
+> Sin embargo, hay algunos que pueden ser muy comunes, y además, fáciles de resolver, pero que la inexperiencia puede hacer que nos resulten muy difíciles de ubicar.
+---
+> [!WARNING]Ruta
+> La ruta de **destino** tiene que existir previo a la ejecución del comando. Si no existe, podemos encontrarnos con un error. (`No such file or directory`)
+
+> [!TIP]
+> Basta con crear la ruta en el destino haciendo uso de `mkdir` (en nuestro equipo o remotamente como hemos visto antes.)
+---
+> [!WARNING]Directorio
+> Es muy común que, en lugar de enviar un fichero individual queramos hacer un envio de un directorio y de sus contenidos, pero al intentarlo podemos experimentar algún error u obtener un resultado diferente al esperado.
+
+> [!TIP]
+> Esto ocurre porque (como es común en Linux) debemos de especificar que queremos enviar el directorio **y sus contenidos**, agregando el parámetro `-r` (de recursivo) al comando.
+---
 - ### 💻 RDP
     Ya hemos visto como manejarnos con conexiones remotas a través de la terminal de comandos, usando `SSH` para conexiones y `SCP` para transferencia segura de ficheros. No es casualidad que en ambos casos hayamos utilizado *Linux*. Y es que, aunque desde *Windwos* también podemos usar los métodos anteriores, este sistema operativo cuenta con lo que conocemos como **Remote Desktop Protrocol**: un protocolo de conexión remota a través de interfaz gráfica que nos permitirá cocnectarnos entre Dispositivos Windows.
 
