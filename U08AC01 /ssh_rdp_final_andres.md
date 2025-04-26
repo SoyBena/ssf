@@ -131,7 +131,9 @@ Tras hacerlo, volvemos a ver el famoso *Fingerprint.* Le damos a Aceptar para co
 |----------------------------------|-------------------|
 | `login as:` | Campo para introducir el usuario con el que nos queremos loggear |
 |`nebula.sys@192.168.221.52's passwords`| Campo para introducir la contraseña|
+
 Y tras hacerlo, estamos dentro.
+
 - ### SCP 🗂️
 Conectarnos de forma remota está bien, pero... ¿Cómo paso los archivos de mi proyecto al servidor? El SCP (Secure Copy Protocol) viene para solucionarlos la vida.
 
