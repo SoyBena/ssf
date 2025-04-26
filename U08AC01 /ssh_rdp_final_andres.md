@@ -52,6 +52,7 @@ Antes de poder conectarnos a un equipo remoto tenemos que asegurarnos de que el 
     ```bash
     sudo systemctl status ssh
     ```
+    
     > [!WARNING]
     > 
     > Bajo circunstancias normales obtendremos un mensaje por consola similar al siguiente: `Unit ssh.service could not be found.` indicando que no se ha encontrado el servicio. 
@@ -59,6 +60,7 @@ Antes de poder conectarnos a un equipo remoto tenemos que asegurarnos de que el 
     > [!TIP]
     > 
     > ¡Pero no pasa nada! Todo tiene solución. Primero nos cercioraremos de que contamos con el paquete `openssh-server` . Para ello, primero actualizaremos la lista de repositorios de nuestro gestor de paquetes —`apt` en este caso— y después lo descargaremos.
+
     ```bash
     sudo apt update &&
     sudo apt install openssh-server
